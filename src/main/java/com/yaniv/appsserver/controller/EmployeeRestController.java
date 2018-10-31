@@ -1,5 +1,6 @@
 package com.yaniv.appsserver.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +39,7 @@ public class EmployeeRestController {
 
 	@PostMapping("/api/employees")
 	public void saveEmployee(Employee employee) {
+		employee.setDepartment(new Date().toString());
 		employeeService.saveEmployee(employee);
 		System.out.println("Employee Saved Successfully");
 	}
