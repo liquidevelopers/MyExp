@@ -44,7 +44,7 @@ public class EmployeeRestController {
 		SimpleDateFormat dateTimeInGMT = new SimpleDateFormat("yyyy-MMM-dd hh:mm:ss aa");
 		//Setting the time zone
 		dateTimeInGMT.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
-		employee.setDepartment(new Date().toString());
+		employee.setDepartment(dateTimeInGMT.format(new Date()).toString());
 		employeeService.saveEmployee(employee);
 		System.out.println("Employee Saved Successfully");
 	}
