@@ -1,7 +1,9 @@
 package com.yaniv.appsserver.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,6 +41,9 @@ public class EmployeeRestController {
 
 	@PostMapping("/api/employees")
 	public void saveEmployee(Employee employee) {
+		SimpleDateFormat dateTimeInGMT = new SimpleDateFormat("yyyy-MMM-dd hh:mm:ss aa");
+		//Setting the time zone
+		dateTimeInGMT.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
 		employee.setDepartment(new Date().toString());
 		employeeService.saveEmployee(employee);
 		System.out.println("Employee Saved Successfully");
