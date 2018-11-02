@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -64,6 +65,14 @@ public class EmployeeRestController {
 			employeeService.updateEmployee(employee);
 		}
 
+	}
+	@Scheduled(cron = "0 0 * * * ?")
+	public void deleteEmployee() {
+		List<Employee> allemployees = employeeService.retrieveEmployees();
+		for(Employee emp : allemployees){
+			employeeService.deleteEmployee(emp.getId());
+		}
+		System.out.println("All Employees Deleted Successfully");
 	}
 
 }
