@@ -14,12 +14,17 @@ const messaging = firebase.messaging();
 messaging.setBackgroundMessageHandler(function(payload) {
   console.log('[firebase-messaging-sw.js] Received background message ', payload);
   // Customize notification here
-  const notificationTitle = 'Incoming Call...';
+  /*const notificationTitle = 'Incoming Call...';
   const notificationOptions = {
-    body: payload,
+    body: 'payload',
     icon: '/itwonders-web-logo.png'
-  };
+  };*/
 
-  return self.registration.showNotification(notificationTitle,
-      notificationOptions);
+  return self.registration.showNotification(payload.data.title,
+		  {
+	    body: payload.data.body
+	    /*icon: payload.data.icon,
+	    tag: payload.data.tag,
+	    data: payload.data.link*/
+	  });
 });
