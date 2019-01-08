@@ -16,7 +16,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
   // Customize notification here
   const notificationTitle = 'Incoming Call...';
   const notificationOptions = {
-    body: 'Background Message body.',
+    body: payload,
     icon: '/itwonders-web-logo.png'
   };
 
