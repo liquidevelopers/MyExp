@@ -20,12 +20,17 @@ messaging.setBackgroundMessageHandler(function(payload) {
     icon: '/itwonders-web-logo.png'
   };*/
 
-  return self.registration.showNotification(payload.data.notification.title,
+  return self.registration.showNotification(payload.data.title,
 		  {
-	    body: payload.data.notification.body
+	    body: payload.data.body
 	    
 	    /*icon: payload.data.icon,
 	    tag: payload.data.tag,
 	    data: payload.data.link*/
 	  });
+  
+ /* self.addEventListener('notificationclick', function(event) {
+	  event.notification.close();
+	  event.waitUntil(self.clients.openWindow(event.notification.data));
+	});*/
 });
