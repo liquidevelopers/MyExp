@@ -20,9 +20,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
     icon: '/itwonders-web-logo.png'
   };*/
 
-  return self.registration.showNotification(payload.data.title,
+  return self.registration.showNotification(payload.data.notification.title,
 		  {
-	    body: payload.data.body
+	    body: payload.data.notification.body
 	    
 	    /*icon: payload.data.icon,
 	    tag: payload.data.tag,
