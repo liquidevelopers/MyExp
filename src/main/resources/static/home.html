@@ -50,11 +50,11 @@
         messaging.onMessage(function(payload) {
             console.log("Message received. ", payload);
             NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload) ;
-             /* var options = {
-                    body: body
+              /* var options = {
+                    body: payload.body
                     //icon: '/firebase-logo.png' .      // payload.icon
                 };
-                var n = new Notification('Notification says',options); */
+                var n = new Notification('title',payload.data);  */
                 //setTimeout(n.close.bind(n), 5000); 
         });
     </script>
