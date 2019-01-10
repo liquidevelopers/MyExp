@@ -36,7 +36,7 @@
                 MsgElem.innerHTML = "Notification permission granted." 
                 console.log("Notification permission granted.");
 
-                // get the token in the form of promise
+                 // get the token in the form of promise
                 return messaging.getToken()
             })
             .then(function(token) {
@@ -49,7 +49,13 @@
 
         messaging.onMessage(function(payload) {
             console.log("Message received. ", payload);
-            NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload) 
+            NotisElem.innerHTML = NotisElem.innerHTML + JSON.stringify(payload) ;
+             /* var options = {
+                    body: body
+                    //icon: '/firebase-logo.png' .      // payload.icon
+                };
+                var n = new Notification('Notification says',options); */
+                //setTimeout(n.close.bind(n), 5000); 
         });
     </script>
 
