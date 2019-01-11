@@ -19,7 +19,7 @@ public class Employee {
 	 private String name;
 	 
 	 @Column(name="EMPLOYEE_SALARY")
-	 private Integer salary;
+	 private Long phoneNumer;
 	 
 	 @Column(name="DEPARTMENT")
 	 private String department;
@@ -40,12 +40,13 @@ public class Employee {
 		this.name = name;
 	}
 
-	public Integer getSalary() {
-		return salary;
+	
+	public Long getPhoneNumer() {
+		return phoneNumer;
 	}
 
-	public void setSalary(Integer salary) {
-		this.salary = salary;
+	public void setPhoneNumer(Long phoneNumer) {
+		this.phoneNumer = phoneNumer;
 	}
 
 	public String getDepartment() {
@@ -58,7 +59,8 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [number=" + name + ", time=" + department + "]";
+		return "Employee [id=" + id + ", name=" + name + ", phoneNumer=" + phoneNumer + ", department=" + department
+				+ "]";
 	}
 	 
 }

@@ -20,7 +20,7 @@ messaging.setBackgroundMessageHandler(function(payload) {
     icon: '/itwonders-web-logo.png'
   };*/
 
-  return self.registration.showNotification('123s',
+  return self.registration.showNotification('Incoming Call..',
 		  {
 	    body: payload.data.body
 	    

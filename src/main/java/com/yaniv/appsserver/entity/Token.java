@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
@@ -13,9 +14,10 @@ public class Token {
 	
 	@Id
     @GeneratedValue
-    private int id;
+    private Long id;
 	 
 	@Column(name="TOKEN")
+	@Lob
 	private String token;
 
 	public String getToken() {
@@ -26,11 +28,11 @@ public class Token {
 		this.token = token;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
