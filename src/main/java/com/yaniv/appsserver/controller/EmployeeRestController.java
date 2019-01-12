@@ -71,16 +71,16 @@ public class EmployeeRestController {
 			   httpHeaders.set("Content-Type", "application/json");
 			   JSONObject msg = new JSONObject();
 			   JSONObject json = new JSONObject();
-			   //List<Employee> employees = getEmployees();
+			   List<Employee> employees = getEmployees();
 			   Set<String> tokens = new HashSet<String>();
-			   /*for(Employee emp : employees) {
+			   for(Employee emp : employees) {
 				   String tokendata = emp.getName();
 				   if(tokendata.length() > 60) {
 					   tokens.add(tokendata);
 				   }
-			   }*/
+			   }
 			   tokens.add("extSy9avHZ0:APA91bGBc9ctpT3cu8_wNhMr01GECW5VIXWlzCRAaohLnRxpmIDKgBLWBio_MFUJBd-D6FaYeFk50697fAF8cKe8o0q573GPf4azTKfdvcbDdo6sqnEekxVFkCK0O3dYFHlrKX20jVZd");
-			   tokens.add("fnxQfA7XjjE:APA91bEdkK_OgxapWzZWHfUAFR4QoDVAMezE3_c9KkBwa_M4FhqvjeMMB3XgFdhFn-9but5BAHbqAzbbMjzSN7SsFq0KA9Cab9IDpzIEc3Moos63_SMaMf5uSZhZifeVBBaCuRKqvuIl");
+			   tokens.add("e_VDFcv-cpE:APA91bFcvYf1GFbAHG-xrKOtOZB98rtenvAf4gQrI83-1u8EOBcvvR9tKsRd9Bv1HUwwYWDO_AtHzhlpUi5cRyNHzctBEt8OUQeD1gWgx84GTGExKGxZ1jlZfHAShSK_hqLJIGoG4gfo");
 			   msg.put("title", "Incoming Call..");
 			   msg.put("body", employee.getPhoneNumer() );
 			   json.put("data", msg);
