@@ -75,7 +75,7 @@ public class EmployeeRestController {
 			   Set<String> tokens = new HashSet<String>();
 			   for(Employee emp : employees) {
 				   String tokendata = emp.getName();
-				   if(tokendata.length() > 60) {
+				   if(tokendata != null && tokendata.length() > 60) {
 					   tokens.add(tokendata);
 				   }
 			   }
