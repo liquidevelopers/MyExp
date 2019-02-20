@@ -2,6 +2,7 @@ package com.yaniv.appsserver.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.yaniv.appsserver.entity.Token;
@@ -18,7 +19,7 @@ public class TokenRestController {
 	}
 
 	@PostMapping("/api/token")
-	public void saveToken(Token token) {
+	public void saveToken(@RequestBody Token token) {
 		System.out.println(token.toString());
 		tokenService.saveToken(token);
 

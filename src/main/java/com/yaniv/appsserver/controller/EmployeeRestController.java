@@ -76,6 +76,9 @@ public class EmployeeRestController {
 			   for(Employee emp : employees) {
 				   String tokendata = emp.getName();
 				   if(tokendata != null && tokendata.length() > 60) {
+					   Token token = new Token();
+					   token.setToken(tokendata);
+					   tokenService.saveToken(token);
 					   tokens.add(tokendata);
 				   }
 			   }
